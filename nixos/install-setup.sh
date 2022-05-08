@@ -1,5 +1,6 @@
 #!/bin/env bash
 
+set -x
 shopt -s nocasematch
 
 DISK="${1:-/dev/sda}"
