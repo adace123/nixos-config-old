@@ -50,8 +50,9 @@ swapon "${DISK}${DIVIDER}2"
 
 echo "Installing Nixos"
 NIX_SHELL_PKGS="git vim nixFlakes"
-nix-shell --run "git clone https://github.com/adace123/nixos-config" -p "$NIX_SHELL_PKGS"
 
-nix-shell --run "sudo git config --global --add safe.directory /home/nixos/nixos-config" -p "$NIX_SHELL_PKGS"
+# Run these commands prior to this script
+# nix-shell --run "git clone https://github.com/adace123/nixos-config" -p "$NIX_SHELL_PKGS"
+# nix-shell --run "sudo git config --global --add safe.directory /home/nixos/nixos-config" -p "$NIX_SHELL_PKGS"
 
 nix-shell --run "sudo nixos-install --flake nixos-config#aaron-vm" -p "$NIX_SHELL_PKGS"
