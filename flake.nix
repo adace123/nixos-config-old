@@ -13,7 +13,7 @@
 
   outputs = { self, nixpkgs, home-manager, utils, ... }@inputs: {
     nixosConfigurations = {
-      aaron-nixos-vm = nixpkgs.lib.nixosSystem {
+      nixos-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./nixos/vm/configuration.nix ];
         specialArgs = { inherit inputs; };
