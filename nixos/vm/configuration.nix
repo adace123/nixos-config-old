@@ -35,7 +35,7 @@
   };
 
   networking = {
-    hostName = "aaron-nixos";
+    hostName = "aaron-nixos-vm";
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.enp0s3.useDHCP = true;
