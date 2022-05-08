@@ -48,4 +48,10 @@ mount /dev/disk/by-label/boot /mnt/boot
 echo "Enabling swap"
 swapon "${DISK}${DIVIDER}2"
 
-echo "Done"
+echo "Installing Nixos"
+NIX_SHELL_PKGS="git vim nixFlakes"
+nix-shell --run "git clone https://github.com/adace123/nixos-config" -p "$NIX_SHELL_PKGS"
+
+nix-shell --run "sudo git config --global --add safe.directory /home/nixos/nixos-config" -p "$NIX_SHELL_PKGS"
+
+nix-shell --run "sudo nixos-install --flake nixos-config#aaron-vm" -p "$NIX_SHELL_PKGS"
