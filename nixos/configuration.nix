@@ -21,17 +21,30 @@
   hardware.video.hidpi.enable = true;
 
   # Use the systemd-boot EFI boot loader.
-  boot.cleanTmpDir = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+	enable = true;
+	version = 2;
+	efiSupport = true;
+	device = "nodev";
+      };
+    };
+  };
 
   networking = {
     hostName = "aaron-nixos";
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.enp0s3.useDHCP = true;
-    firewall.enable = true;
+    firewall = {
+	enable = true;
+	allowedTCPPorts = [ 80 443 22 ];
+	allowedUDPPorts = [ 52 ];
+	allowPing = true;
+    };
   };
 
   # Set your time zone.
@@ -43,8 +56,12 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # setup windowing environment
-  services.xserver = {
+  services = {
+  nixos-auto-update.enable = true;
+  openssh = {
+    enable = true;
+  };
+  xserver = {
     enable = true;
     layout = "us";
     dpi = 220;
@@ -62,6 +79,7 @@
     windowManager = {
       i3.enable = true;
     };
+  };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -106,9 +124,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   nix.registry = lib.mapAttrs' (n: v:
     lib.nameValuePair (n) ({ flake = v; })
