@@ -25,7 +25,7 @@ parted "$DISK" -- mklabel gpt
 echo "Creating root partition"
 parted "$DISK" -- mkpart primary 512MiB -4GiB
 echo "Creating swap partition"
-parted "$DISK" -- mkpart primary linux-swap -4GiB 1800%
+parted "$DISK" -- mkpart primary linux-swap -4GiB 100%
 echo "Creating boot partition"
 parted "$DISK" -- mkpart ESP fat32 1MiB 512MiB
 parted "$DISK" -- set 3 esp on
