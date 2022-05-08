@@ -28,5 +28,5 @@
         configuration = ./home-manage/home.nix;
       };
     };
-  }
+  };
 }
