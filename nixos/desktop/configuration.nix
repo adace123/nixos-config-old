@@ -88,7 +88,7 @@
       isNormalUser = true;
       home = "/home/aaron";
       hashedPassword = "$6$f1zH0EoA1X1PT4e1$8EhSLI8ugdmYkWrYlVFO.I1bA1GgRzbMAg7X5HxECaaHRviiCJ0dgu7sjRVwaycDZatAuPBZJg8EeZiF4CDNC1";
-      extraGroups = [ "wheel" "networkmanager" "vboxsf" ];
+      extraGroups = [ "wheel" "networkmanager" ];
       shell = pkgs.zsh;
   };
 
