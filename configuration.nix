@@ -23,6 +23,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.cleanTmpDir = true;
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
@@ -95,6 +96,7 @@
     xclip
     firefox
     curl
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
