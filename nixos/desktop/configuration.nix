@@ -57,7 +57,6 @@
   hardware.pulseaudio.enable = true;
 
   services = {
-  nixos-auto-update.enable = true;
   openssh = {
     enable = true;
   };
