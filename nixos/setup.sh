@@ -50,6 +50,6 @@ swapon "${DISK}${DIVIDER}2"
 
 echo "Installing Nixos"
 sudo git config --global --add safe.directory /home/nixos/nixos-config
-sudo nixos-install --flake ./nixos-config#nixos-vm
+sudo nixos-install --flake /home/nixos/nixos-config#nixos-vm
 
 # sudo home-manager switch --flake ./nixos-config#aaron
