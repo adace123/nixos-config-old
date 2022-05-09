@@ -26,7 +26,6 @@
         system = "x86_64-linux";
         homeDirectory = "/home/aaron";
         configuration = ./home-manage/home.nix;
-	hashedPassword = "$y$j9T$iZbJp/2NNsKb07N1q97j5.$PggNC2Q0AHeW6LB2IlNlKWKO/lez1A7yVOaH71yByF3";
       };
     };
   };
