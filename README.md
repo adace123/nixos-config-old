@@ -16,5 +16,5 @@ sudo virt-install \
   --console pty,target_type=serial \
   --cdrom <ISO path>
 ```
-3. Attach a console to the VM using virt-manager. (TODO: Determine how to do this from the CLI)
-4. Inside the VM run nix-shell -I https://github.com/NixOs/nixpkgs-channels/archive/nixos-unstable.tar.gz --run "git clone https://github.com/adace123/nixos-config && sudo bash ./nixos-config/nixos/setup.sh /dev/vda" -p git nixFlakes home-manager
+3. Attach a console to the VM using virt-manager or virt-viewer.
+4. Inside the VM run `nix-shell --run "git clone https://github.com/adace123/nixos-config && sudo bash ./nixos-config/nixos/setup.sh /dev/vda"`
