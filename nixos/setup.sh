@@ -49,5 +49,6 @@ echo "Enabling swap"
 swapon "${DISK}${DIVIDER}2"
 
 echo "Installing Nixos"
-sudo git config --global -add safe.directory /home/nixos/nixos-config
-nix-shell --run "sudo nixos-install --flake ./nixos-config#nixos-vm" -p git nixFlakes
+sudo git config --global --add safe.directory /home/nixos/nixos-config
+sudo nixos-install --flake ./nixos-config#nixos-vm
+

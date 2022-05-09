@@ -17,6 +17,4 @@ sudo virt-install \
   --cdrom <ISO path>
 ```
 3. Attach a console to the VM using virt-manager. (TODO: Determine how to do this from the CLI)
-4. Inside the VM run nix-shell --run "git clone https://github.com/adace123/nixos-config" -p git
-5. Run `nix-shell --run "sudo git config --global --add safe.directory /home/nixos/nixos-config" -p git`
-6. To format / partition the drives and install NixOS run `nix-shell --run "sudo bash /home/nixos/nixos-config/nixos/install-setup.sh /dev/vda"` -p git nixFlakes
+4. Inside the VM run nix-shell -I https://github.com/NixOs/nixpkgs-channels/archive/nixos-unstable.tar.gz --run "git clone https://github.com/adace123/nixos-config && sudo bash ./nixos-config/nixos/setup.sh /dev/vda" -p git nixFlakes home-manager
