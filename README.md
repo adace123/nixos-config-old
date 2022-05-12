@@ -17,4 +17,4 @@ sudo virt-install \
   --cdrom <ISO path>
 ```
 3. Attach a console to the VM using virt-manager or virt-viewer.
-4. Inside the VM run `nix-shell --run "git clone https://github.com/adace123/nixos-config && sudo bash ./nixos-config/nixos/setup.sh /dev/vda"`
+4. Inside the VM run `nix-shell -p git nixFlakes --run "git clone https://github.com/adace123/nixos-config && sudo bash ./nixos-config/nixos/setup.sh /dev/vda"`
