@@ -1,9 +1,19 @@
 { inputs, lib, config, pkgs, ... }:
-
 {
   imports = [
+    <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+    <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
     ./hardware-configuration.nix
   ];
+
+  nixos-shell.mounts.mountHome = false;
+
+  virtualisation = {
+    diskSize = 75000; # MB
+    memorySize = 4096; # MB
+    writableStoreUseTmpfs = false;
+    graphics = true;
+  };
 
   # use unstable nix so we can access flakes
   nix = {
@@ -26,10 +36,10 @@
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
-	enable = true;
-	version = 2;
-	efiSupport = true;
-	device = "nodev";
+        enable = true;
+        version = 2;
+        efiSupport = true;
+        device = "nodev";
       };
     };
   };
@@ -40,16 +50,16 @@
     useDHCP = false;
     interfaces.enp0s3.useDHCP = true;
     firewall = {
-	enable = true;
-	allowedTCPPorts = [ 80 443 22 ];
-	allowedUDPPorts = [ 52 ];
-	allowPing = true;
+      enable = true;
+      allowedTCPPorts = [ 80 443 22 ];
+      allowedUDPPorts = [ 52 ];
+      allowPing = true;
     };
   };
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
- 
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -57,40 +67,41 @@
   hardware.pulseaudio.enable = true;
 
   services = {
-  openssh = {
-    enable = true;
-  };
-  xserver = {
-    enable = true;
-    layout = "us";
-    dpi = 220;
-
-    desktopManager = {
-      xterm.enable = false;
-      wallpaper.mode = "scale";
+    qemuGuest.enable = true;
+    openssh = {
+      enable = true;
+      permitRootLogin = "yes";
     };
+    xserver = {
+      enable = true;
+      layout = "us";
+      dpi = 220;
 
-    displayManager = {
-      defaultSession = "none+i3";
-      lightdm.enable = true;
-    };
+      desktopManager = {
+        xterm.enable = false;
+        wallpaper.mode = "scale";
+      };
 
-    windowManager = {
-      i3.enable = true;
+      displayManager = {
+        defaultSession = "none+leftwm";
+        lightdm.enable = true;
+      };
+
+      windowManager = { leftwm.enable = true; };
     };
-  };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
 
   users.users.aaron = {
-      isNormalUser = true;
-      home = "/home/aaron";
-      hashedPassword = "$y$j9T$iZbJp/2NNsKb07N1q97j5.$PggNC2Q0AHeW6LB2IlNlKWKO/lez1A7yVOaH71yByF3";
-      extraGroups = [ "wheel" "networkmanager" ];
-      shell = pkgs.zsh;
+    isNormalUser = true;
+    home = "/home/aaron";
+    extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
   };
+
+  users.extraUsers.root.password = "";
 
   # Manage fonts. We pull these from a secret directory since most of these
   # fonts require a purchase.
@@ -108,23 +119,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gnumake
-    killall
-    xclip
-    firefox
-    curl
     git
+    home-manager
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  nix.registry = lib.mapAttrs' (n: v:
-    lib.nameValuePair (n) ({ flake = v; })
-  ) inputs;
 }
