@@ -2,6 +2,9 @@
 
 {
   programs.exa.enable = true;
-  programs.git.enable = true;
-  programs.home-manager.enable = true;
+  programs.alacritty.enable = true;
+
+  home.packages = [
+    pkgs.neofetch
+  ];
 }
