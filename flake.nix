@@ -24,7 +24,7 @@
         username = "aaron";
         system = "x86_64-linux";
         homeDirectory = "/home/aaron";
-        configuration = ./home-manager/home.nix;
+        configuration = ./home-manager;
       };
     };
   };
