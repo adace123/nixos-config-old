@@ -2,10 +2,9 @@
 {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/virtualisation/qemu-vm.nix")
     ./hardware-configuration.nix
   ];
-
-  nixos-shell.mounts.mountHome = false;
 
   virtualisation = {
     diskSize = 75000; # MB
