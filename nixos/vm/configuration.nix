@@ -81,11 +81,11 @@
       };
 
       displayManager = {
-        defaultSession = "none+leftwm";
+        defaultSession = "none+i3";
         lightdm.enable = true;
       };
 
-      windowManager = { leftwm.enable = true; };
+      windowManager = { i3.enable = true; i3.package = pkgs.i3-gaps; };
     };
   };
 
@@ -105,7 +105,6 @@
   # fonts require a purchase.
   fonts = {
     fontDir.enable = true;
-
     fonts = with pkgs; [
       fira-code
       jetbrains-mono
