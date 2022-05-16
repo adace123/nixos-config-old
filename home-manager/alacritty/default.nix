@@ -1,4 +1,4 @@
-{ alacrittyTheme ? "catpuccin", pkgs, ... }:
+{ pkgs, ... }:
 let 
    themes = (import ./themes.nix {});
 in
@@ -27,7 +27,7 @@ in
 	size = 11;
       };
 
-      colors = themes.${alacrittyTheme};
+      colors = themes.catpuccin;
     };
   };
 }
