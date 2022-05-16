@@ -4,5 +4,5 @@
     pkgs.alacritty
   ];
 
-  xdg.confgFile."alacritty/alacritty.yml".source = ./alacritty.yml;
+  xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yml;
 }
