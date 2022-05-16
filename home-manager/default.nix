@@ -2,8 +2,4 @@
 
 {
   imports = [ ./alacritty ];
-
-  home.packages = [
-    pkgs.xdg
-  ];
 }
