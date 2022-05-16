@@ -2,8 +2,8 @@
   description = "Home Manager NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hardware.url = "github:nixos/nixos-hardware";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    hardware.url = "github:NixOS/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +24,7 @@
         username = "aaron";
         system = "x86_64-linux";
         homeDirectory = "/home/aaron";
-        configuration = ./home-manage/home.nix;
+        configuration = ./home-manager/home.nix;
       };
     };
   };
