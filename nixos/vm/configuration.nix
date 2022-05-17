@@ -66,6 +66,7 @@
 
   services = {
     qemuGuest.enable = true;
+    picom.enable = true;
     openssh = {
       enable = true;
       permitRootLogin = "yes";
