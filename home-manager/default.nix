@@ -2,4 +2,7 @@
 
 {
   imports = [ ./alacritty ];
+  home.packages = [
+    python310
+  ];
 }
