@@ -27,7 +27,7 @@ in
 	size = 11;
       };
 
-      colors = themes.catpuccin;
+      colors = themes.gruvbox_dark;
     };
   };
 }
