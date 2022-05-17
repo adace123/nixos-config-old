@@ -3,6 +3,6 @@
 {
   imports = [ ./alacritty ];
   home.packages = [
-    python310
+    pkgs.python310
   ];
 }
