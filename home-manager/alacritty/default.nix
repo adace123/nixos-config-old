@@ -1,9 +1,9 @@
-{ pkgs, fetchFromGithub, ... }:
+{ pkgs, fetchFromGitHub, ... }:
 let 
    themes = (import ./themes.nix {});
 in
 {
-  home.file.".config/alacritty/colors" = fetchFromGithub {
+  home.file.".config/alacritty/colors" = fetchFromGitHub {
     owner = "eenderoy";
     repo = "alacritty-theme";
     rev = "master";
