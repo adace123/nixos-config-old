@@ -3,7 +3,8 @@
 {
   imports = [ ./alacritty ];
 
-  home.stateVersion = "22.09";
+  home.useGlobalPkgs = true;
+  home.useUserPackages = true;
 
   home.packages = [
     pkgs.python310
