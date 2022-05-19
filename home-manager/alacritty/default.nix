@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let 
    themes = (import ./themes.nix {});
-   repo = pkgs.fetchFromGithub {
+   repo = pkgs.fetchFromGitHub {
     owner = "eendroroy";
     repo = "alacritty-theme";
     rev = "ade1c91";
