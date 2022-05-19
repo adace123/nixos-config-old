@@ -1,13 +1,14 @@
-{ pkgs, fetchFromGitHub, ... }:
+{ pkgs, ... }:
+with import <nixpkgs> {};
 let 
    themes = (import ./themes.nix {});
 in
 {
-  home.file.".config/alacritty/colors" = fetchFromGitHub {
+  home.file.".config/alacritty/colors".source = fetchFromGitHub {
     owner = "eenderoy";
     repo = "alacritty-theme";
-    rev = "master";
-    sha256 = "ade1c9114cf37d0239c3499b74c8196cf1e6aee4";
+    rev = "ade1c91";
+    sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
   };
 
   home.packages = with pkgs; [
