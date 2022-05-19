@@ -1,10 +1,9 @@
 { pkgs, ... }:
-with import <nixpkgs> {};
 let 
    themes = (import ./themes.nix {});
 in
 {
-  home.file.".config/alacritty/colors".source = fetchFromGitHub {
+  home.file.".config/alacritty/colors".source = pkgs.fetchFromGitHub {
     owner = "eenderoy";
     repo = "alacritty-theme";
     rev = "ade1c91";
