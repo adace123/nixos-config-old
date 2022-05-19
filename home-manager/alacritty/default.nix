@@ -1,18 +1,19 @@
 { pkgs, ... }:
 let 
    themes = (import ./themes.nix {});
-in
-{
-  home.file.".config/alacritty/colors".source = pkgs.fetchFromGitHub {
+   repo = pkgs.fetchFromGithub {
     owner = "eendroroy";
     repo = "alacritty-theme";
     rev = "ade1c91";
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
   };
+in
+{
+  home.file.".config/alacritty/colors".source = "${repo}/themes";
 
-  #home.packages = with pkgs; [
-  #  (python310.withPackages(ps: with ps; [ alacritty-colorscheme ]))
-  #];
+  home.packages = with pkgs; [
+    (python310.withPackages(ps: with ps; [ alacritty-colorscheme ]))
+  ];
 
   programs.alacritty = {
     enable = true;
