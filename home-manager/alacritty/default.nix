@@ -11,9 +11,9 @@ in
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
   };
 
-  home.packages = with pkgs; [
-    python310Packages.alacritty-colorscheme
-  ];
+  home.packages = with pkgs; python310.withPackages (p: with p; [
+    alacritty-colorscheme
+  ]);
 
   programs.alacritty = {
     enable = true;
