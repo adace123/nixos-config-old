@@ -8,12 +8,17 @@ let
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
    };
 
-   alacritty-colorscheme = pkgs.python310Packages.fetchPypi {
+   alacritty-colorscheme = pkgs.python310Packages.buildPythonPackage rec {
      pname = "alacritty-colorscheme";
      version = "1.0.1";
-     sha256 = "779fa9b7c2352050ca50758c74493a7599ede8a584a089ad9fc7bbc0d9b51c53";
-   };
 
+     src = pkgs.python310Packages.fetchPypi {
+       inherit pname version;
+       sha256 = "779fa9b7c2352050ca50758c74493a7599ede8a584a089ad9fc7bbc0d9b51c53";
+     };
+     
+     doCheck = false;
+   };
 in
 {
   home.file.".config/alacritty/colors".source = "${repo}/themes";
