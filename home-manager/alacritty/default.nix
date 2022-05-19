@@ -6,14 +6,23 @@ let
     repo = "alacritty-theme";
     rev = "ade1c91";
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
-  };
+   };
+
+   alacritty-colorscheme = pkgs.python310Packages.buildPythonPackage {
+     src = python310Packages.fetchPypi {
+       pname = "alacritty-colorscheme";
+       version = "1.0.1";
+     };
+     
+     doCheck = false;
+   };
 in
 {
   home.file.".config/alacritty/colors".source = "${repo}/themes";
 
-  #home.packages = with pkgs; [
-  #  (python310.withPackages(ps: with ps; [ alacritty-colorscheme ]))
-  #];
+  home.packages = with pkgs; [
+    alacritty-colorscheme
+  ];
 
   programs.alacritty = {
     enable = true;
