@@ -8,7 +8,7 @@ let
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
    };
 
-   alacritty-colorscheme = pkgs.python310Packages.buildPythonPackage {
+   alacritty-colorscheme = pkgs.python310Packages.buildPythonPackage rec {
      pname = "alacritty-colorscheme";
      version = "1.0.1";
 
