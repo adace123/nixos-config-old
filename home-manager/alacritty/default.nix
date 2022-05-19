@@ -9,7 +9,7 @@ let
    };
 
    alacritty-colorscheme = pkgs.python310Packages.buildPythonPackage {
-     src = python310Packages.fetchPypi {
+     src = pkgs.python310Packages.fetchPypi {
        pname = "alacritty-colorscheme";
        version = "1.0.1";
      };
