@@ -11,9 +11,9 @@ in
 {
   home.file.".config/alacritty/colors".source = "${repo}/themes";
 
-  home.packages = with pkgs; [
-    (python310.withPackages(ps: with ps; [ alacritty-colorscheme ]))
-  ];
+  #home.packages = with pkgs; [
+  #  (python310.withPackages(ps: with ps; [ alacritty-colorscheme ]))
+  #];
 
   programs.alacritty = {
     enable = true;
