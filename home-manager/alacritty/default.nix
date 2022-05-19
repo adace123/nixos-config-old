@@ -14,7 +14,7 @@ let
 
      src = pkgs.fetchFromGitHub {
        owner = "toggle-corp";
-       repo = "alacritty-colortheme";
+       repo = "alacritty-colorscheme";
        rev = "4dd944c";
        sha256 = "0g6kpnv9q6vspjwrl661bzzfpnxzw2138ll5gldjvb17pw6rg5rp";
      };
