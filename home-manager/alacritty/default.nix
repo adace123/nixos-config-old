@@ -4,7 +4,7 @@ let
 in
 {
   home.file.".config/alacritty/colors".source = pkgs.fetchFromGitHub {
-    owner = "eenderoy";
+    owner = "eendroroy";
     repo = "alacritty-theme";
     rev = "ade1c91";
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
