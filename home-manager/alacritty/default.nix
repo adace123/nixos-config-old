@@ -12,10 +12,16 @@ let
      pname = "alacritty-colorscheme";
      version = "1.0.1";
 
-     src = pkgs.python310Packages.fetchPypi {
-       inherit pname version;
-       sha256 = "779fa9b7c2352050ca50758c74493a7599ede8a584a089ad9fc7bbc0d9b51c53";
+     src = pkgs.fetchFromGitHub {
+       owner = "toggle-corp";
+       repo = "alacritty-colortheme";
+       rev = "4dd944c";
+       sha256 = "0g6kpnv9q6vspjwrl661bzzfpnxzw2138ll5gldjvb17pw6rg5rp";
      };
+     #src = pkgs.python310Packages.fetchPypi {
+     #  inherit pname version;
+     #  sha256 = "779fa9b7c2352050ca50758c74493a7599ede8a584a089ad9fc7bbc0d9b51c53";
+     #};
      
      doCheck = false;
    };
