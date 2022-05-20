@@ -3,7 +3,7 @@
 {
   imports = [ ./alacritty ];
 
-  home.packages = [
-    
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 }
