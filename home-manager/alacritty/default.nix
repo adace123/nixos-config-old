@@ -7,7 +7,7 @@ let
     sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
    };
    
-   selectedTheme = "gruvbox_light";
+   selectedTheme = "tomorrow_night";
    theme = (import ../../utils.nix { inherit pkgs; }).fromYAML "${alacritty-themes}/themes/${selectedTheme}.yaml";
    fontFamily = "JetBrainsMono Nerd Font";
 in
