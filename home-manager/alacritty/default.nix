@@ -9,6 +9,7 @@ let
    
    selectedTheme = "gruvbox_dark";
    theme = (import ../../utils.nix { inherit pkgs; }).fromYAML "${alacritty-themes}/themes/${selectedTheme}.yaml";
+   fontFamily = "JetBrainsMono Nerd Font";
 in
 {
   programs.alacritty = {
@@ -27,11 +28,11 @@ in
 
       mouse = { hide_when_typing = true; };
 
-      font = let fontname = "Hack Nerd Font Mono"; in {
-	normal = { family = fontname; };
-	bold = { family = fontname; style = "Bold"; };
-        italic = { family = fontname; style = "Semibold Italic"; };
-	size = 11;
+      font = {
+        normal = { family = fontFamily; };
+	bold = { family = fontFamily; style = "Bold"; };
+	italic = { family = fontFamily; style = "Semibold Italic"; };
+        size = 12;
       };
 
     } // theme;
