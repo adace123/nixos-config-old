@@ -1,4 +1,4 @@
-{ yaml2json, stdenv }:
+{ pkgs, stdenv }:
 {
   fromYAML = path:
     let
@@ -6,7 +6,7 @@
       fileToJSON = stdenv.mkDerivation {
         name = "fromYAML";
 	phases = [ "buildPhase" ];
-	buildPhase = "${yaml2json}/bin/yaml2json < ${builtins.toFile "yaml" fileContents} > $out";
+	buildPhase = "${pkgs.yaml2json}/bin/yaml2json < ${builtins.toFile "yaml" fileContents} > $out";
       };
     in
       builtins.fromJSON (builtins.readFile fileToJSON);
