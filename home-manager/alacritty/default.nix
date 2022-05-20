@@ -8,7 +8,7 @@ let
    };
    
    selectedTheme = "gruvbox_dark";
-   theme = (import ../../utils.nix { inherit stdenv pkgs; }).fromYAML "${alacritty-themes}/themes/${selectedTheme}.yaml";
+   theme = (import ../../utils.nix { inherit stdenv; inherit pkgs; }).fromYAML "${alacritty-themes}/themes/${selectedTheme}.yaml";
 in
 {
   programs.alacritty = {
