@@ -1,13 +1,13 @@
 { pkgs, ... }:
 let 
    alacritty-themes = pkgs.fetchFromGitHub {
-    owner = "eendroroy";
-    repo = "alacritty-theme";
-    rev = "ade1c91";
-    sha256 = "19bprgkmy08g58akijzwbfrmfipxzcdkvnadk5k94jklbjayiiff";
+    owner = "adace123";
+    repo = "alacritty-themes";
+    rev = "6147b56";
+    sha256 = "1i0czz1h7bircwfd84njma7m1wm6p8w9g219xvaiz208pmjd6bw1";
    };
    
-   selectedTheme = "tomorrow_night";
+   selectedTheme = "catppuccin";
    theme = (import ../../utils.nix { inherit pkgs; }).fromYAML "${alacritty-themes}/themes/${selectedTheme}.yaml";
    fontFamily = "JetBrainsMono Nerd Font";
 in
