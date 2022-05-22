@@ -9,5 +9,6 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.exa
     pkgs.fzf
+    pkgs.neovim
   ];
 }
