@@ -3,8 +3,7 @@ let
   mod = "Mod4";
 in
 {
-  programs.i3 = {
-    enable = true;
+  services.i3 = {
     keybindings = {
       "${mod}+Return" = "exec ${pkgs.alacritty}";
     };
