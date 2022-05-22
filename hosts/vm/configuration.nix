@@ -96,6 +96,7 @@
     isNormalUser = true;
     home = "/home/aaron";
     extraGroups = [ "wheel" "networkmanager" ];
+    hashedPassword = "$5$/nhm9p0UG6PMMe5t$0P/i5UAlQItu16yjr8h/Xw/qKDqp9nfHlys3sze0dmC";
     shell = pkgs.zsh;
   };
 

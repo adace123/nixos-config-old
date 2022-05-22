@@ -12,9 +12,9 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      nixos-vm = nixpkgs.lib.nixosSystem {
+      qemu = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./nixos/vm/configuration.nix ];
+        modules = [ ./hosts/vm/configuration.nix ];
         specialArgs = { inherit inputs; };
       };
     };
@@ -24,7 +24,7 @@
         username = "aaron";
         system = "x86_64-linux";
         homeDirectory = "/home/aaron";
-        configuration = ./home-manager;
+        configuration = ./home;
       };
     };
   };
