@@ -1,5 +1,4 @@
-{ modulesPath, inputs, lib, config, pkgs, ... }:
-{
+{ modulesPath, inputs, lib, config, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     (modulesPath + "/virtualisation/qemu-vm.nix")
@@ -85,7 +84,10 @@
         lightdm.enable = true;
       };
 
-      windowManager = { i3.enable = true; i3.package = pkgs.i3-gaps; };
+      windowManager = {
+        i3.enable = true;
+        i3.package = pkgs.i3-gaps;
+      };
     };
   };
 
@@ -96,7 +98,8 @@
     isNormalUser = true;
     home = "/home/aaron";
     extraGroups = [ "wheel" "networkmanager" ];
-    hashedPassword = "$5$/nhm9p0UG6PMMe5t$0P/i5UAlQItu16yjr8h/Xw/qKDqp9nfHlys3sze0dmC";
+    hashedPassword =
+      "$5$/nhm9p0UG6PMMe5t$0P/i5UAlQItu16yjr8h/Xw/qKDqp9nfHlys3sze0dmC";
     shell = pkgs.zsh;
   };
 
@@ -116,8 +119,5 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    home-manager
-  ];
+  environment.systemPackages = with pkgs; [ git home-manager ];
 }

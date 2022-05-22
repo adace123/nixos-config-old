@@ -1,10 +1,7 @@
 { inputs, lib, config, pkgs, fonts, ... }:
 
 {
-  imports = [
-    ./programs/alacritty.nix
-    ./services/i3.nix
-  ];
+  imports = [ ./programs/alacritty.nix ./services/i3.nix ];
 
   fonts.fontconfig.enable = true;
 

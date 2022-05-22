@@ -1,11 +1,12 @@
-{ pkgs, lib, ... }:
-let
-  mod = xsession.windowManager.i3.config.modifier;
-in
-{
-  xsession.windowManager.i3.config = {
-    keybindings = {
-      "${mod}+Return" = "exec alacritty";
-    };   
+{ pkgs, lib, ... }: {
+  xsession.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
+    config = {
+
+      keybindings = {
+        "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+      };
+    };
   };
 }
