@@ -20,7 +20,6 @@
       experimental-features = nix-command flakes
     '';
     gc.automatic = true;
-    settings.auto-optimise-store = true;
   };
 
   nixpkgs.config.allowUnfree = true;
