@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   mod = xsession.windowManager.i3.config.modifier;
 in
