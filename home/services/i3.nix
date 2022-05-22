@@ -1,11 +1,11 @@
 { pkgs, ... }:
 let
-  mod = "Mod4";
+  mod = xsession.windowManager.i3.config.modifier;
 in
 {
-  services.i3 = {
+  xsession.windowManager.i3.config = {
     keybindings = {
-      "${mod}+Return" = "exec ${pkgs.alacritty}";
-    };
+      "${mod}+Return" = "exec alacritty";
+    };   
   };
 }
