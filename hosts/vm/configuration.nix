@@ -83,7 +83,7 @@
 	    start = ''
               ${pkgs.runtimeShell} $HOME/.hm-xsession &
 	      waitPID=$!
-	    ''
+	    '';
 	  }
 	];
         wallpaper.mode = "scale";
