@@ -3,6 +3,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     (modulesPath + "/virtualisation/qemu-vm.nix")
     ./hardware-configuration.nix
+    ../i3.nix
   ];
 
   virtualisation = {
@@ -76,18 +77,27 @@
 
       desktopManager = {
         xterm.enable = false;
+	session = [
+          {
+            name = "home-manager";
+	    start = ''
+              ${pkgs.runtimeShell} $HOME/.hm-xsession &
+	      waitPID=$!
+	    ''
+	  }
+	];
         wallpaper.mode = "scale";
       };
 
       displayManager = {
-        defaultSession = "none+i3";
+        # defaultSession = "none+i3";
         lightdm.enable = true;
       };
 
-      windowManager = {
-        i3.enable = true;
-        i3.package = pkgs.i3-gaps;
-      };
+      # windowManager = {
+      #  i3.enable = true;
+      #  i3.package = pkgs.i3-gaps;
+      # };
     };
   };
 
