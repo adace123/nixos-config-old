@@ -3,15 +3,14 @@
   xsession.windowManager.i3 = {
     enable = true;
     
-    modifier = "Mod4";
-
     package = pkgs.i3-gaps;
 
-    #config = {
+    config = {
+      modifier = "Mod4";
      # keybindings = {
       #  "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";  
        # "${mod}+q" = "kill";
       #};
-    #};
+    };
   };
 }
