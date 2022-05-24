@@ -1,10 +1,7 @@
 { inputs, lib, config, pkgs, fonts, ... }:
 
 {
-  imports = [ 
-    ./programs/alacritty.nix 
-    ./services/i3-gaps.nix
-  ];
+  imports = [ ./programs/alacritty.nix ./services/i3-gaps.nix ];
 
   xsession.enable = true;
 

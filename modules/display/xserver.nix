@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   services = {
     xserver = {
       enable = true;
@@ -8,7 +7,7 @@
 
       displayManager = {
         lightdm.enable = true;
-	defaultSession = "none+i3";
+        defaultSession = "none+i3";
       };
 
       windowManager.i3.enable = true;
