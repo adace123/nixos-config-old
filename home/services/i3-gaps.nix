@@ -1,10 +1,11 @@
 { pkgs, ... }:
+let
+  mod = "Mod4";
+in
 {
-  xsession.windowManager.i3 = rec {
+  xsession.windowManager.i3 = {
     enable = true;
     
-    mod = "Mod4";
-
     package = pkgs.i3-gaps;
     
     config = {
