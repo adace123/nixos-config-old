@@ -3,6 +3,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     (modulesPath + "/virtualisation/qemu-vm.nix")
     ./hardware-configuration.nix
+    ../../modules/display/i3.nix
   ];
 
   virtualisation = {
@@ -61,44 +62,6 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  services = {
-    qemuGuest.enable = true;
-    picom.enable = true;
-    openssh = {
-      enable = true;
-      permitRootLogin = "yes";
-    };
-    xserver = {
-      enable = true;
-      layout = "us";
-      dpi = 220;
-
-      desktopManager = {
-        xterm.enable = false;
-	session = [
-          {
-            name = "home-manager";
-	    start = ''
-              ${pkgs.runtimeShell} $HOME/.hm-xsession &
-	      waitPID=$!
-	    '';
-	  }
-	];
-        wallpaper.mode = "scale";
-      };
-
-      displayManager = {
-        # defaultSession = "none+i3";
-        lightdm.enable = true;
-      };
-
-      # windowManager = {
-      #  i3.enable = true;
-      #  i3.package = pkgs.i3-gaps;
-      # };
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
