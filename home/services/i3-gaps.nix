@@ -9,7 +9,9 @@ in
     package = pkgs.i3-gaps;
     
     config = {
-      "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";  
+      keybindings = {
+        "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";  
+      };
     };
   };
 }
