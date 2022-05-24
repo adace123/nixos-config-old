@@ -9,11 +9,11 @@
       modifier = "Mod4";
     };
     
-    config = {
-      keybindings = {
-        "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";  
-        "${mod}+q" = "kill";
-      };
-    };
+    #config = {
+     # keybindings = {
+      #  "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";  
+       # "${mod}+q" = "kill";
+      #};
+    #};
   };
 }
