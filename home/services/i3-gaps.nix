@@ -1,11 +1,14 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }: 
+let
+  mod = "Mod4";
+in
+{
   xsession.windowManager.i3 = {
     enable = true;
 
     package = pkgs.i3-gaps;
 
-    config = rec {
-      mod = "Mod4";
+    config = {
       keybindings = {
         "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
         "${mod}+q" = "kill";
