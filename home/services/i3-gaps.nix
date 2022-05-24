@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  xession.windowManager.i3 = rec {
+  xsession.windowManager.i3 = rec {
     enable = true;
     
     mod = "Mod4";
