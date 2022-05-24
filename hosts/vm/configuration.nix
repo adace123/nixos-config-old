@@ -3,7 +3,8 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     (modulesPath + "/virtualisation/qemu-vm.nix")
     ./hardware-configuration.nix
-    ../../modules/display/i3.nix
+    ../../modules/display/xserver.nix
+    ../../modules/display/i3-gaps.nix
   ];
 
   virtualisation = {

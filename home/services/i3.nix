@@ -1,8 +1,7 @@
 { pkgs, lib, ... }:
 {
-  xsession.windowManager.i3 = {
+  programs.i3 = {
     enable = true;
-    package = pkgs.i3-gaps;
 
     config = rec {
       modifier = "Mod4";
