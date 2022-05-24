@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
   services = {
-    picom = {
-      enable = true;
-    };
-
     xserver = {
       enable = true;
 
@@ -12,7 +8,10 @@
 
       displayManager = {
         lightdm.enable = true;
+	defaultSession = "none+i3";
       };
+
+      windowManager.i3.enable = true;
     };
   };
 }

@@ -4,7 +4,6 @@
     (modulesPath + "/virtualisation/qemu-vm.nix")
     ./hardware-configuration.nix
     ../../modules/display/xserver.nix
-    ../../modules/display/i3-gaps.nix
   ];
 
   virtualisation = {

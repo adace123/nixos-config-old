@@ -3,8 +3,10 @@
 {
   imports = [ 
     ./programs/alacritty.nix 
-    ./services/i3.nix
+    ./services/i3-gaps.nix
   ];
+
+  xsession.enable = true;
 
   fonts.fontconfig.enable = true;
 
