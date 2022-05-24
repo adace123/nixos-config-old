@@ -3,6 +3,7 @@
 {
   imports = [ 
     ./programs/alacritty.nix 
+    ./services/i3.nix
   ];
 
   fonts.fontconfig.enable = true;
