@@ -24,6 +24,8 @@
       host.port = 2222;
       guest.port = 22;
     }];
+
+    qemu.options = [ "-display gtk,grab-on-hover=on" ];
   };
 
   # use unstable nix so we can access flakes
