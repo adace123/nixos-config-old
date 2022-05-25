@@ -1,8 +1,6 @@
-{ pkgs, config, ... }: 
-let
-  mod = "Mod4";
-in
-{
+{ pkgs, config, ... }:
+let mod = "Mod4";
+in {
   xsession.windowManager.i3 = {
     enable = true;
 
@@ -43,11 +41,10 @@ in
         "${mod}+Down" = "focus down";
         "${mod}+Up" = "focus up";
 
-	"${mod}+Shift+Left" = "move left";
-	"${mod}+Shift+Right" = "move right";
-	"${mod}+Shift+Down" = "move down";
-	"${mod}+Shift+Up" = "move up";
-
+        "${mod}+Shift+Left" = "move left";
+        "${mod}+Shift+Right" = "move right";
+        "${mod}+Shift+Down" = "move down";
+        "${mod}+Shift+Up" = "move up";
 
         "${mod}+f" = "fullscreen toggle";
         "${mod}+Shift+space" = "floating toggle";
