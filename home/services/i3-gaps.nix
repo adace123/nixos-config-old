@@ -23,11 +23,10 @@ in {
         "${mod}+9" = "workspace number 9";
         "${mod}+0" = "workspace number 10";
         "${mod}+Tab" = "workspace back_and_forth";
-	"${mod}+h" = "focus left";
-	"${mod}+j" = "focus down";
-	"${mod}+k" = "focus up";
-	"${mod}+l" = "focus right";
-	
+        "${mod}+h" = "focus left";
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
 
         # move containers to workspaces
         "${mod}+Shift+1" = "move container to workspace number 1";
@@ -67,7 +66,7 @@ in {
         "${mod}+XF86AudioPlay" =
           "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
-	"${mod}+d" = "exec ~/.config/rofi/launchers/colorful/launcher.sh";
+        "${mod}+d" = "exec ~/.config/rofi/launchers/colorful/launcher.sh";
       };
 
       modes = {
