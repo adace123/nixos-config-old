@@ -89,7 +89,7 @@ in {
 
       startup = [
         {
-          command = "pgrep ${pkgs.brave}/bin/brave || ${pkgs.brave}/bin/brave";
+          command = "pgrep ${pkgs.firefox}/bin/firefox || ${pkgs.firefox}/bin/firefox";
           always = true;
           notification = false;
         }

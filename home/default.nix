@@ -11,6 +11,6 @@
     exa
     fzf
     neovim
-    brave
+    firefox
   ];
 }
