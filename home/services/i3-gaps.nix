@@ -89,7 +89,8 @@ in {
 
       startup = [
         {
-          command = "pgrep ${pkgs.firefox}/bin/firefox || ${pkgs.firefox}/bin/firefox";
+          command =
+            "pgrep ${pkgs.firefox}/bin/firefox || ${pkgs.firefox}/bin/firefox";
           always = true;
           notification = false;
         }

@@ -1,8 +1,12 @@
 { inputs, lib, config, pkgs, fonts, ... }:
 
 {
-  imports =
-    [ ./programs/alacritty.nix ./services/i3-gaps.nix ./programs/rofi.nix ];
+  imports = [
+    ./programs/alacritty.nix
+    ./services/i3-gaps.nix
+    ./programs/rofi.nix
+    ./programs/firefox.nix
+  ];
 
   fonts.fontconfig.enable = true;
 
@@ -11,6 +15,5 @@
     exa
     fzf
     neovim
-    firefox
   ];
 }
