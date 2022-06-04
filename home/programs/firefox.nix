@@ -6,6 +6,7 @@
       bitwarden
       darkreader
       privacy-badger
+      tridactyl
     ];
 
   };
