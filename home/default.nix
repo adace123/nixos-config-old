@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./programs/alacritty.nix
-    ./services/i3-gaps.nix
-    ./programs/rofi.nix
-    ./programs/firefox.nix
+    ./programs/alacritty
+    ./services/i3-gaps
+    ./programs/rofi
+    ./programs/firefox
   ];
 
   fonts.fontconfig.enable = true;

@@ -8,7 +8,7 @@ let
   };
 
   selectedTheme = "catppuccin";
-  theme = (import ../../utils.nix { inherit pkgs; }).fromYAML
+  theme = (import ../../../lib { inherit pkgs; }).fromYAML
     "${alacritty-themes}/themes/${selectedTheme}.yaml";
   fontFamily = "JetBrainsMono Nerd Font";
 in {

@@ -67,6 +67,8 @@ in {
           "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
         "${mod}+d" = "exec ~/.config/rofi/launchers/colorful/launcher.sh";
+
+	"${mod}+w" = "exec ${pkgs.firefox}/bin/firefox";
       };
 
       modes = {
